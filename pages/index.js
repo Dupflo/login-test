@@ -34,7 +34,7 @@ export default function useUser() {
 
   return (
     <div className="container h-screen mx-auto flex flex-col items-center justify-center">
-      {data ? (
+      {data.isConnected ? (
         <div className="text-6xl sm:text-7xl md:text-8xl uppercase bg-green-500 text-white p-6">
           Connecté
         </div>

@@ -11,7 +11,7 @@ const headers = {
 // const urlToTest =
 //   'https://loginval.aeroportsdeparis.fr/Adp.IdentityFederationV4.web/api/User/get-connected-user'
 
-const urlToTestRewrite = '/api/auth' //check next.config.js
+const urlToTestRewrite = 'http://localhost:3000/api/is-user-connected' //check next.config.js
 
 const url = urlToTestRewrite // add urlToTestRewrite or urlToTest
 

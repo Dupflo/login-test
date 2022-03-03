@@ -12,7 +12,7 @@ const headers = {
 //   'https://loginval.aeroportsdeparis.fr/Adp.IdentityFederationV4.web/api/User/get-connected-user'
 
 const urlToTestRewrite =
-  'https://msdn-frc-app-customers.azurewebsites.net/connexion/api/is-user-connected' //check next.config.js
+  'https://msdn-frc-app-customers.azurewebsites.net/api/is-user-connected' //check next.config.js
 
 const url = urlToTestRewrite // add urlToTestRewrite or urlToTest
 

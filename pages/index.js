@@ -34,7 +34,8 @@ export default function useUser() {
   const { data } = useSWR([url], fetcher)
 
   const addCookie = () => {
-    Cookies.set('cookieTest1', 'value', { path: '/', sameSite: 'lax' })
+    Cookies.set('cookieTest1', 'value', { path: '/', sameSite: 'lax', domain: '.' })
+    Cookies.set('cookieTest1', 'value', { path: '/', sameSite: 'lax', domain: '.*' })
   }
 
   return (

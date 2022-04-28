@@ -35,7 +35,7 @@ export default function useUser() {
 
   const addCookie = () => {
     Cookies.set('cookieTest1', 'value', { path: '/', sameSite: 'lax', domain: 'login-test-three.vercel.app' })
-    Cookies.set('cookieTest2', 'value', { path: '/', sameSite: 'lax', domain: 'vercel.app' })
+    Cookies.set('cookieTest2', 'value', { path: '/', sameSite: 'lax', domain: '.vercel.app' })
     Cookies.set('cookieTest3', 'value', { path: '/', sameSite: 'lax' })
     Cookies.set('cookieTest4', 'value', { sameSite: 'lax' })
   }

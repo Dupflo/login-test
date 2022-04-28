@@ -1,6 +1,7 @@
 import useSWR from 'swr'
 
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 const headers = {
   'Content-Type': 'application/json',
@@ -11,8 +12,7 @@ const headers = {
 // const urlToTest =
 //   'https://loginval.aeroportsdeparis.fr/Adp.IdentityFederationV4.web/api/User/get-connected-user'
 
-const urlToTestRewrite =
-  'https://msdn-frc-app-customers.azurewebsites.net/api/is-user-connected' //check next.config.js
+const urlToTestRewrite = 'https://msdn-frc-app-customers.azurewebsites.net/api/is-user-connected' //check next.config.js
 
 const url = urlToTestRewrite // add urlToTestRewrite or urlToTest
 
@@ -33,22 +33,24 @@ export default function useUser() {
 
   const { data } = useSWR([url], fetcher)
 
+  const addCookie = () => {
+    Cookies.set('cookieTest1', 'value', { domain: 'login-test-three.vercel.app' })
+    Cookies.set('cookieTest2', 'value', { domain: '.vercel.app' })
+  }
+
   return (
     <div className="container h-screen mx-auto flex flex-col items-center justify-center">
       {data?.isConnected ? (
-        <div className="text-6xl sm:text-7xl md:text-8xl uppercase bg-green-500 text-white p-6">
-          Connecté
-        </div>
+        <div className="text-6xl sm:text-7xl md:text-8xl uppercase bg-green-500 text-white p-6">Connecté</div>
       ) : (
-        <div className="text-6xl sm:text-7xl md:text-8xl uppercase bg-red-500 text-white p-6">
-          Déconnecté
-        </div>
+        <div className="text-6xl sm:text-7xl md:text-8xl uppercase bg-red-500 text-white p-6">Déconnecté</div>
       )}
       {/* <iframe width="0" height="0" src="http://localhost:3000/"></iframe> */}
       <div className="text-lg md:text-xl p-6">
         <strong>Url: </strong>
         {url}
       </div>
+      <button onClick={addCookie}>Add Cookie</button>
     </div>
   )
 }

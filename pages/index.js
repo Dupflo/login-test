@@ -34,8 +34,10 @@ export default function useUser() {
   const { data } = useSWR([url], fetcher)
 
   const addCookie = () => {
-    Cookies.set('cookieTest1', 'value', { path: '/', sameSite: 'lax', domain: '.' })
-    Cookies.set('cookieTest1', 'value', { path: '/', sameSite: 'lax', domain: '.*' })
+    Cookies.set('cookieTest1', 'value')
+    Cookies.set('cookieTest2', 'value', { domain: 'login-test-three.vercel.app/' })
+    Cookies.set('cookieTest3', 'value', { domain: '.login-test-three.vercel.app/' })
+    Cookies.set('cookieTest4', 'value', { path: '/', domain: '.login-test-three.vercel.app/' })
   }
 
   return (
